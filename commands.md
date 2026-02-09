@@ -12,6 +12,19 @@ docker run -it \
   -p 5433:5432 \
   postgres:18
 
+  docker run -it --rm \
+  --network=pg-network \
+  taxi_ingest:v001 \
+    --user=root \
+    --password=root \
+    --host=pgdatabase \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_trips_2021_1
+    --chunksize=100000
+
+
+
 
   Install pgcli:
 
